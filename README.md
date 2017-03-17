@@ -38,7 +38,7 @@ I am proposing the following structures for message contracts.
 {
   "version": "1",
   "result": {
-    "type": “success”,
+    "type": "success",
     "data": {
       ...
     }
