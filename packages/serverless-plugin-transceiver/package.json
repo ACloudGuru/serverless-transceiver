@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/ACloudGuru/serverless-transceiver",
   "author": "John McKim <john@acloud.guru>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0"
+  }
 }
