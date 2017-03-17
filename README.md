@@ -36,10 +36,10 @@ I am proposing the following structures for message contracts.
 #### Success Result
 ```json
 {
-  “version”: “1”,
-  “result”: {
-    “type”: “success”,
-    “data”: {
+  "version": "1",
+  "result": {
+    "type": “success”,
+    "data": {
       ...
     }
   }
@@ -50,15 +50,15 @@ I am proposing the following structures for message contracts.
 #### Validation Result
 ```json
 {
-  “version”: “1”,
-  “result”: {
-    “type”: “validation”,
-    “validation”: {
-      “messages”: [{
-        “message”: “General validation”
+  "version": "1",
+  "result": {
+    "type": "validation",
+    "validation": {
+      "messages": [{
+        "message": "General validation"
       }, {
-        “key”: “name”,
-        “message”: “Name is required”
+        "key": "name",
+        "message": "Name is required"
       }]
     }
   }
@@ -68,11 +68,11 @@ I am proposing the following structures for message contracts.
 #### Exception Result
 ```json
 {
-  “version”: “1”,
-  “result”: {
-    “type”: “exception”,
-    “exception”: {
-      “message”: “Object is not an instance of an Object.”
+  "version": "1",
+  "result": {
+    "type": "exception",
+    "exception": {
+      "message": "Object is not an instance of an Object."
     }
   }
 }
