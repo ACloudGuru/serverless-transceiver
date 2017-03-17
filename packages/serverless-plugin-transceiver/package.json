@@ -1,0 +1,9 @@
+{
+  "name": "serverless-plugin-transceiver",
+  "version": "0.0.1",
+  "description": "Serverless framework plugin for serverless transciever",
+  "main": "index.js",
+  "repository": "https://github.com/ACloudGuru/serverless-transceiver",
+  "author": "John McKim <john@acloud.guru>",
+  "license": "MIT"
+}
