@@ -12,6 +12,9 @@ const invoke = (provider, func, data) => {
         .invoke(func, data)
         .then((result) => {
             // check result type and handle appropriately
+            if (result.type === 'validation') {
+                return Promise.reject()
+            }
 
         }).catch((err) => {
 

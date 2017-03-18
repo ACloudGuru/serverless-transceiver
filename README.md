@@ -46,7 +46,6 @@ I am proposing the following structures for message contracts.
 }
 ```
 
-
 #### Validation Result
 ```json
 {
@@ -65,20 +64,6 @@ I am proposing the following structures for message contracts.
 }
 ```
 
-#### Exception Result
-```json
-{
-  "version": "1",
-  "result": {
-    "type": "exception",
-    "exception": {
-      "message": "Object is not an instance of an Object."
-    }
-  }
-}
-```
-
-
 ### Data Contracts
 A data contracts defines format of the event and result of a function. This will take the form of a JSON schema.
 
@@ -89,10 +74,44 @@ A data contracts defines format of the event and result of a function. This will
 - Validate events before invocation
 - Handle errors in a standard way
 
-### Function
+
+```js
+const transciever = require('serverless-transceiver-client')
+
+transciever
+  .invoke('my-function', { message: 'hello' })
+  .then((result) => {
+
+  })
+  .catch((err) => {
+    if (err.type === 'validation') {
+      // handle nicely
+    }
+  })
+
+```
+
+### Service
 - Validate received events
 - Method for returning standard responses
 
+
+```js
+const transciever = require('serverless-transceiver-service')
+
+module.exports = (event, context, cb) => {
+  const validation = validate(event)
+  // success
+  if (!validation.isValid) {
+    cb(null, transciever.validation(validation.messages))
+  }
+
+  // do some logic
+  const result = mylogic(event.message)
+
+  cb(null, transciever.success(result))
+}
+```
 ## Serverless Plugin
 
 ### Define Data contracts
