@@ -7,6 +7,6 @@
   "author": "John McKim <john@acloud.guru>",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.28.0"
+    "aws-sdk": "^2.814.0"
   }
 }
